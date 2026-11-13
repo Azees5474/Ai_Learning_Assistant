@@ -4,3 +4,10 @@ chromadb
 pypdf
 python-dotenv
 ollama
+gTTS
+streamlit-mic-recorder
+langchain-community
+langchain-text-splitters
+langchain-ollama
+langchain-chroma
+langchain-core

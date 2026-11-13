@@ -1,2 +1,18 @@
-# Created by venv; see https://docs.python.org/3/library/venv.html
-*
+# Python bytecode, environments, and test caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Local configuration
+.env
+.env.*
+!.env.example
+
+# Generated search indexes, student state, and speech audio
+/chroma_db/
+/chroma_db_langchain/
+/student_memory.json
+/memory/chat_memory.json
+/audio/

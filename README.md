@@ -2,6 +2,23 @@
 
 An AI-powered personalized learning assistant that helps students learn from their own study materials, generate quizzes, create study plans, track performance, and receive personalized recommendations.
 
+## Quick start on Windows
+
+Install Python 3.12 and [Ollama](https://ollama.com/). Start Ollama, then run the following in PowerShell from the repository root.
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+ollama pull qwen3:4b
+ollama pull gemma3:4b
+ollama pull embeddinggemma
+.\.venv\Scripts\python.exe -m streamlit run app.py
+```
+
+Open [Streamlit](http://localhost:8501), choose **Upload Study PDF**, and upload [Python_Notes.pdf](documents/Python_Notes.pdf) as a sample. Once indexing finishes, switch to **AI Chat** and ask a question from the notes with **Strict PDF Mode** on.
+
+The app creates its search index and student memory locally. Rebuild the index by uploading PDFs again or by running `.\.venv\Scripts\python.exe ingest_langchain.py` to index the PDFs in `documents/`. Keep a backup of `student_memory.json` and `memory/chat_memory.json` outside the clone if you need to transfer existing progress. The optional read-aloud feature uses gTTS and needs an internet connection.
+
 ## 📌 Project Overview
 
 The AI Learning & Study Assistant is an intelligent educational application built using Python, Streamlit, RAG, and local Large Language Models.
@@ -93,3 +110,4 @@ Converts AI-generated answers into speech.
                      |
                      v
               📊 Progress Update
+```
